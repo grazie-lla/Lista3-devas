@@ -12,22 +12,18 @@ public class Questao2 {
         System.out.println("Insira a medida da temperatura atual (Kelvin, Celsius ou Fahrenheit):");
         String currentScale = input.nextLine().toLowerCase();
 
-        if (!currentScale.equalsIgnoreCase("kelvin") && !currentScale.equalsIgnoreCase("celsius") && !currentScale.equalsIgnoreCase("fahrenheit")){
-            System.out.println(currentScale + "Opção inválida!");
-            return;
-        }
-
         System.out.println("Insira para qual medida será convertida a temperatura (Kelvin, Celsius ou Fahrenheit):");
         String finalScale = input.nextLine().toLowerCase();
 
-        if (!finalScale.equalsIgnoreCase("kelvin") && !finalScale.equalsIgnoreCase("celsius") && !finalScale.equalsIgnoreCase("fahrenheit")){
-            System.out.println(finalScale + "Opção inválida!");
-            return;
-        }
-
         double output = convertTemperature(temperature, currentScale, finalScale);
 
-        System.out.printf("Temperatura atual = %.2f %nMedida atual = %s %nMedida final = %s %nOutput = %.2f", temperature, currentScale, finalScale, output);
+        if (!currentScale.equalsIgnoreCase("kelvin") && !currentScale.equalsIgnoreCase("celsius") && !currentScale.equalsIgnoreCase("fahrenheit")){
+            System.out.println("Opção inválida!");
+        }else if (!finalScale.equalsIgnoreCase("kelvin") && !finalScale.equalsIgnoreCase("celsius") && !finalScale.equalsIgnoreCase("fahrenheit")){
+            System.out.println("Opção inválida!");
+        } else {
+            System.out.printf("Temperatura atual = %.2f %nMedida atual = %s %nMedida final = %s %nOutput = %.2f", temperature, currentScale, finalScale, output);
+        }
 
     }
 

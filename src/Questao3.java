@@ -9,13 +9,11 @@ public class Questao3 {
 
         if (number == 0 || number == 1){
             System.out.println("O fatorial de " + number + " é 1");
-            return;
         } else if (number > 20) {
             System.out.println("Resultado final excede a capacidade do programa!");
-            return;
+        }else {
+            System.out.println("O fatorial de " + number + " é " + factorialCalculation(number));
         }
-
-        System.out.println("O fatorial de " + number + " é " + factorialCalculation(number));
 
     }
 
